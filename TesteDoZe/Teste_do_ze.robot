@@ -17,3 +17,8 @@ Colocar o endereço sendo menor de 18
     Dado que eu insiro o endereco
     E sou menor de 18 anos
     Então deve ser exibido a mensagem de proibido bebida para menor de 18
+Editar endereço
+    Dado que eu insiro o endereco
+    E sou maior de 18 anos
+    Quando eu altero o endereço
+    Então o endereco editado deve ser visivel no header
