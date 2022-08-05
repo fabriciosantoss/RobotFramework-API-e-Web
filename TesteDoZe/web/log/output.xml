@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.10.5 on win32)" generated="20220804 21:08:37.125" rpa="false" schemaversion="3">
+<suite id="s1" name="Teste Do Ze" source="C:\Users\fabriciosantos\Desktop\TesteDoZe\teste_do_ze.robot">
+<test id="s1-t1" name="Colocar o endereço sendo maior de 18" line="11">
+<kw name="Vai Ze" library="resource_do_ze" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>${Browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220804 21:08:37.539" level="INFO">Opening browser 'chrome' to base url 'http://www.ze.delivery'.</msg>
+<status status="PASS" starttime="20220804 21:08:37.539" endtime="20220804 21:08:43.963"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220804 21:08:43.963" endtime="20220804 21:08:44.085"/>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>0.5</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20220804 21:08:44.085" endtime="20220804 21:08:44.085"/>
+</kw>
+<status status="PASS" starttime="20220804 21:08:37.538" endtime="20220804 21:08:44.085"/>
+</kw>
+<kw name="Dado que eu insiro o endereco" library="HomePO">
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${Btn_Cookie}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20220804 21:08:44.086" endtime="20220804 21:08:46.351"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Btn_Cookie}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220804 21:08:46.352" level="INFO">Clicking element 'id:onetrust-accept-btn-handler'.</msg>
+<status status="PASS" starttime="20220804 21:08:46.351" endtime="20220804 21:08:48.168"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Btn_Endereco}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220804 21:08:48.168" level="INFO">Clicking element 'id:fake-address-search-input'.</msg>
+<status status="PASS" starttime="20220804 21:08:48.168" endtime="20220804 21:08:49.252"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Ipt_Endereco}</arg>
+<arg>Av. Afrânio Peixoto, 57b</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220804 21:08:49.252" level="INFO">Typing text 'Av. Afrânio Peixoto, 57b' into text field 'id:address-search-input-address'.</msg>
+<status status="PASS" starttime="20220804 21:08:49.252" endtime="20220804 21:08:50.996"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${Li_Endereco}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20220804 21:08:50.996" endtime="20220804 21:08:53.297"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Li_Endereco}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220804 21:08:53.299" level="INFO">Clicking element 'xpath://li[@itemid="google-address"][1]'.</msg>
+<status status="PASS" starttime="20220804 21:08:53.298" endtime="20220804 21:08:54.380"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${Chkb_SemComplemento}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20220804 21:08:54.381" endtime="20220804 21:08:55.960"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Chkb_SemComplemento}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220804 21:08:55.961" level="INFO">Clicking element 'name:withoutComplement'.</msg>
+<status status="PASS" starttime="20220804 21:08:55.960" endtime="20220804 21:08:57.050"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Btn_Produtos}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220804 21:08:57.050" level="INFO">Clicking element 'id:address-details-button-continue'.</msg>
+<status status="PASS" starttime="20220804 21:08:57.050" endtime="20220804 21:08:58.112"/>
+</kw>
+<status status="PASS" starttime="20220804 21:08:44.086" endtime="20220804 21:08:58.112"/>
+</kw>
+<kw name="E sou maior de 18 anos" library="ProdutosPO">
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${Btn_Maior18}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20220804 21:08:58.113" endtime="20220804 21:09:01.820"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${Btn_Maior18}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220804 21:09:01.820" level="INFO">Clicking button 'id:age-gate-button-yes'.</msg>
+<status status="PASS" starttime="20220804 21:09:01.820" endtime="20220804 21:09:04.410"/>
+</kw>
+<status status="PASS" starttime="20220804 21:08:58.113" endtime="20220804 21:09:04.410"/>
+</kw>
+<kw name="Então o endereco deve ser visivel no header" library="ProdutosPO">
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>${Div_Endereco}</arg>
+<arg>${txt_Endereco}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20220804 21:09:05.449" level="INFO">Element 'id:address-container' contains text 'Avenida Afrânio Peixoto, 57 Praia Grande, Salvador - BA'.</msg>
+<status status="PASS" starttime="20220804 21:09:04.411" endtime="20220804 21:09:05.449"/>
+</kw>
+<status status="PASS" starttime="20220804 21:09:04.411" endtime="20220804 21:09:05.449"/>
+</kw>
+<kw name="Xau Ze" library="resource_do_ze" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220804 21:09:05.450" endtime="20220804 21:09:08.673"/>
+</kw>
+<status status="PASS" starttime="20220804 21:09:05.450" endtime="20220804 21:09:08.673"/>
+</kw>
+<status status="PASS" starttime="20220804 21:08:37.537" endtime="20220804 21:09:08.675"/>
+</test>
+<test id="s1-t2" name="Colocar o endereço sendo menor de 18" line="16">
+<kw name="Vai Ze" library="resource_do_ze" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>${Browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220804 21:09:08.685" level="INFO">Opening browser 'chrome' to base url 'http://www.ze.delivery'.</msg>
+<status status="PASS" starttime="20220804 21:09:08.683" endtime="20220804 21:09:18.963"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220804 21:09:18.963" endtime="20220804 21:09:19.610"/>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>0.5</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20220804 21:09:19.611" endtime="20220804 21:09:19.612"/>
+</kw>
+<status status="PASS" starttime="20220804 21:09:08.681" endtime="20220804 21:09:19.612"/>
+</kw>
+<kw name="Dado que eu insiro o endereco" library="HomePO">
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${Btn_Cookie}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20220804 21:09:19.615" endtime="20220804 21:09:21.192"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Btn_Cookie}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220804 21:09:21.193" level="INFO">Clicking element 'id:onetrust-accept-btn-handler'.</msg>
+<status status="PASS" starttime="20220804 21:09:21.192" endtime="20220804 21:09:23.304"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Btn_Endereco}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220804 21:09:23.306" level="INFO">Clicking element 'id:fake-address-search-input'.</msg>
+<status status="PASS" starttime="20220804 21:09:23.305" endtime="20220804 21:09:24.406"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Ipt_Endereco}</arg>
+<arg>Av. Afrânio Peixoto, 57b</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220804 21:09:24.407" level="INFO">Typing text 'Av. Afrânio Peixoto, 57b' into text field 'id:address-search-input-address'.</msg>
+<status status="PASS" starttime="20220804 21:09:24.406" endtime="20220804 21:09:26.153"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${Li_Endereco}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20220804 21:09:26.153" endtime="20220804 21:09:28.428"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Li_Endereco}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220804 21:09:28.429" level="INFO">Clicking element 'xpath://li[@itemid="google-address"][1]'.</msg>
+<status status="PASS" starttime="20220804 21:09:28.428" endtime="20220804 21:09:29.499"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${Chkb_SemComplemento}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20220804 21:09:29.500" endtime="20220804 21:09:31.065"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Chkb_SemComplemento}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220804 21:09:31.066" level="INFO">Clicking element 'name:withoutComplement'.</msg>
+<status status="PASS" starttime="20220804 21:09:31.065" endtime="20220804 21:09:32.157"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Btn_Produtos}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220804 21:09:32.157" level="INFO">Clicking element 'id:address-details-button-continue'.</msg>
+<status status="PASS" starttime="20220804 21:09:32.157" endtime="20220804 21:09:33.253"/>
+</kw>
+<status status="PASS" starttime="20220804 21:09:19.614" endtime="20220804 21:09:33.253"/>
+</kw>
+<kw name="E sou menor de 18 anos" library="ProdutosPO">
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${Btn_Menor18}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20220804 21:09:33.254" endtime="20220804 21:09:37.751"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${Btn_Menor18}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220804 21:09:37.751" level="INFO">Clicking button 'id:age-gate-button-no'.</msg>
+<status status="PASS" starttime="20220804 21:09:37.751" endtime="20220804 21:09:40.405"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220804 21:09:45.413" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20220804 21:09:40.405" endtime="20220804 21:09:45.413"/>
+</kw>
+<kw name="Switch Window" library="SeleniumLibrary">
+<arg>${Janela_Ambev}</arg>
+<arg>None</arg>
+<arg>1</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<msg timestamp="20220804 21:09:50.010" level="WARN">Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000001F0F9501990&gt;: Failed to establish a new connection: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente')': /session/c7651a9f3c2cf6796992905b08821ea0/window</msg>
+<msg timestamp="20220804 21:09:54.085" level="WARN">Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000001F0F9501C30&gt;: Failed to establish a new connection: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente')': /session/c7651a9f3c2cf6796992905b08821ea0/window</msg>
+<msg timestamp="20220804 21:09:58.148" level="WARN">Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000001F0F9501D80&gt;: Failed to establish a new connection: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente')': /session/c7651a9f3c2cf6796992905b08821ea0/window</msg>
+<msg timestamp="20220804 21:10:06.329" level="WARN">Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000001F0F94854B0&gt;: Failed to establish a new connection: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente')': /session/c7651a9f3c2cf6796992905b08821ea0/screenshot</msg>
+<msg timestamp="20220804 21:10:10.424" level="WARN">Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000001F0F9485390&gt;: Failed to establish a new connection: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente')': /session/c7651a9f3c2cf6796992905b08821ea0/screenshot</msg>
+<msg timestamp="20220804 21:10:14.536" level="WARN">Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000001F0F9485FC0&gt;: Failed to establish a new connection: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente')': /session/c7651a9f3c2cf6796992905b08821ea0/screenshot</msg>
+<msg timestamp="20220804 21:10:18.615" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: HTTPConnectionPool(host='localhost', port=65370): Max retries exceeded with url: /session/c7651a9f3c2cf6796992905b08821ea0/screenshot (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000001F0F94875E0&gt;: Failed to establish a new connection: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente'))</msg>
+<msg timestamp="20220804 21:10:18.617" level="FAIL">MaxRetryError: HTTPConnectionPool(host='localhost', port=65370): Max retries exceeded with url: /session/c7651a9f3c2cf6796992905b08821ea0/window (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000001F0F9501ED0&gt;: Failed to establish a new connection: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente'))</msg>
+<status status="FAIL" starttime="20220804 21:09:45.413" endtime="20220804 21:10:18.639"/>
+</kw>
+<kw name="Close Window" library="SeleniumLibrary">
+<doc>Closes currently opened and selected browser window/tab.</doc>
+<status status="NOT RUN" starttime="20220804 21:10:18.639" endtime="20220804 21:10:18.639"/>
+</kw>
+<status status="FAIL" starttime="20220804 21:09:33.253" endtime="20220804 21:10:18.639"/>
+</kw>
+<kw name="Então deve ser exibido a mensagem de proibido bebida para menor de 18" library="ProdutosPO">
+<status status="NOT RUN" starttime="20220804 21:10:18.640" endtime="20220804 21:10:18.640"/>
+</kw>
+<kw name="Xau Ze" library="resource_do_ze" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<msg timestamp="20220804 21:10:22.732" level="WARN">Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000001F0F95020E0&gt;: Failed to establish a new connection: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente')': /session/c7651a9f3c2cf6796992905b08821ea0</msg>
+<msg timestamp="20220804 21:10:26.843" level="WARN">Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000001F0F95021D0&gt;: Failed to establish a new connection: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente')': /session/c7651a9f3c2cf6796992905b08821ea0</msg>
+<msg timestamp="20220804 21:10:30.926" level="WARN">Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000001F0F9502320&gt;: Failed to establish a new connection: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente')': /session/c7651a9f3c2cf6796992905b08821ea0</msg>
+<status status="PASS" starttime="20220804 21:10:18.641" endtime="20220804 21:10:35.010"/>
+</kw>
+<status status="PASS" starttime="20220804 21:10:18.640" endtime="20220804 21:10:35.010"/>
+</kw>
+<status status="FAIL" starttime="20220804 21:09:08.679" endtime="20220804 21:10:35.011">MaxRetryError: HTTPConnectionPool(host='localhost', port=65370): Max retries exceeded with url: /session/c7651a9f3c2cf6796992905b08821ea0/window (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000001F0F9501ED0&gt;: Failed to establish a new connection: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente'))</status>
+</test>
+<test id="s1-t3" name="Editar endereço" line="20">
+<kw name="Vai Ze" library="resource_do_ze" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>${Browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220804 21:10:35.018" level="INFO">Opening browser 'chrome' to base url 'http://www.ze.delivery'.</msg>
+<status status="PASS" starttime="20220804 21:10:35.016" endtime="20220804 21:10:41.414"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220804 21:10:41.414" endtime="20220804 21:10:42.050"/>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>0.5</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20220804 21:10:42.050" endtime="20220804 21:10:42.050"/>
+</kw>
+<status status="PASS" starttime="20220804 21:10:35.016" endtime="20220804 21:10:42.050"/>
+</kw>
+<kw name="Dado que eu insiro o endereco" library="HomePO">
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${Btn_Cookie}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20220804 21:10:42.052" endtime="20220804 21:10:43.615"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Btn_Cookie}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220804 21:10:43.615" level="INFO">Clicking element 'id:onetrust-accept-btn-handler'.</msg>
+<status status="PASS" starttime="20220804 21:10:43.615" endtime="20220804 21:10:45.311"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Btn_Endereco}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220804 21:10:45.312" level="INFO">Clicking element 'id:fake-address-search-input'.</msg>
+<status status="PASS" starttime="20220804 21:10:45.311" endtime="20220804 21:10:46.399"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Ipt_Endereco}</arg>
+<arg>Av. Afrânio Peixoto, 57b</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220804 21:10:46.400" level="INFO">Typing text 'Av. Afrânio Peixoto, 57b' into text field 'id:address-search-input-address'.</msg>
+<status status="PASS" starttime="20220804 21:10:46.399" endtime="20220804 21:10:48.153"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${Li_Endereco}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20220804 21:10:48.153" endtime="20220804 21:10:50.435"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Li_Endereco}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220804 21:10:50.437" level="INFO">Clicking element 'xpath://li[@itemid="google-address"][1]'.</msg>
+<status status="PASS" starttime="20220804 21:10:50.436" endtime="20220804 21:10:51.505"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${Chkb_SemComplemento}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20220804 21:10:51.506" endtime="20220804 21:10:53.067"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Chkb_SemComplemento}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220804 21:10:53.067" level="INFO">Clicking element 'name:withoutComplement'.</msg>
+<status status="PASS" starttime="20220804 21:10:53.067" endtime="20220804 21:10:54.136"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Btn_Produtos}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220804 21:10:54.137" level="INFO">Clicking element 'id:address-details-button-continue'.</msg>
+<status status="PASS" starttime="20220804 21:10:54.136" endtime="20220804 21:10:55.234"/>
+</kw>
+<status status="PASS" starttime="20220804 21:10:42.051" endtime="20220804 21:10:55.234"/>
+</kw>
+<kw name="E sou maior de 18 anos" library="ProdutosPO">
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${Btn_Maior18}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20220804 21:10:55.235" endtime="20220804 21:10:59.668"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${Btn_Maior18}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220804 21:10:59.668" level="INFO">Clicking button 'id:age-gate-button-yes'.</msg>
+<status status="PASS" starttime="20220804 21:10:59.668" endtime="20220804 21:11:02.373"/>
+</kw>
+<status status="PASS" starttime="20220804 21:10:55.235" endtime="20220804 21:11:02.374"/>
+</kw>
+<kw name="Quando eu altero o endereço" library="ProdutosPO">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${View_Endereco}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220804 21:11:02.375" level="INFO">Clicking element 'xpath://*[@id="delivery-options-card"]/div[2]'.</msg>
+<status status="PASS" starttime="20220804 21:11:02.375" endtime="20220804 21:11:03.448"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Btn_AlterarEndereço}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220804 21:11:03.448" level="INFO">Clicking element 'id:delivery-options-tool-tip-address'.</msg>
+<status status="PASS" starttime="20220804 21:11:03.448" endtime="20220804 21:11:04.528"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Ipt_Endereco}</arg>
+<arg>Rua Carlos Gomes Centro, Salvador - BA, Brasil</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220804 21:11:04.528" level="INFO">Typing text 'Rua Carlos Gomes Centro, Salvador - BA, Brasil' into text field 'id:address-search-input-address'.</msg>
+<status status="PASS" starttime="20220804 21:11:04.528" endtime="20220804 21:11:06.257"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Li_EnderecoEditado}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220804 21:11:06.258" endtime="20220804 21:11:08.033"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Li_EnderecoEditado}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220804 21:11:08.034" level="INFO">Clicking element 'xpath://ul//li[@id][1]'.</msg>
+<status status="PASS" starttime="20220804 21:11:08.033" endtime="20220804 21:11:09.088"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Lbl_NumeroEndereco}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220804 21:11:09.088" endtime="20220804 21:11:10.140"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Lbl_NumeroEndereco}</arg>
+<arg>5</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220804 21:11:10.140" level="INFO">Typing text '5' into text field 'id:address-details-input-number'.</msg>
+<status status="PASS" starttime="20220804 21:11:10.140" endtime="20220804 21:11:11.744"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Chkb_SemComplemento}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220804 21:11:11.744" level="INFO">Clicking element 'name:withoutComplement'.</msg>
+<status status="PASS" starttime="20220804 21:11:11.744" endtime="20220804 21:11:12.800"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${Btn_Produtos}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220804 21:11:12.802" level="INFO">Clicking button 'id:address-details-button-continue'.</msg>
+<status status="PASS" starttime="20220804 21:11:12.801" endtime="20220804 21:11:15.432"/>
+</kw>
+<status status="PASS" starttime="20220804 21:11:02.374" endtime="20220804 21:11:15.432"/>
+</kw>
+<kw name="Então o endereco editado deve ser visivel no header" library="ProdutosPO">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Div_Endereco}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220804 21:11:15.433" endtime="20220804 21:11:16.470"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>${Div_Endereco}</arg>
+<arg>${txt_EnderecoEditado}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20220804 21:11:18.628" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-3.png"&gt;&lt;img src="selenium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20220804 21:11:18.628" level="FAIL">Element 'id:address-container' should have contained text 'Rua Carlos Gomes, 5 Dois de Julho, Salvador - BA' but its text was 'Por favor, aguarde
+Carregando seu endereço'.</msg>
+<status status="FAIL" starttime="20220804 21:11:16.470" endtime="20220804 21:11:18.630"/>
+</kw>
+<status status="FAIL" starttime="20220804 21:11:15.432" endtime="20220804 21:11:18.631"/>
+</kw>
+<kw name="Xau Ze" library="resource_do_ze" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220804 21:11:18.633" endtime="20220804 21:11:22.113"/>
+</kw>
+<status status="PASS" starttime="20220804 21:11:18.632" endtime="20220804 21:11:22.113"/>
+</kw>
+<status status="FAIL" starttime="20220804 21:10:35.014" endtime="20220804 21:11:22.114">Element 'id:address-container' should have contained text 'Rua Carlos Gomes, 5 Dois de Julho, Salvador - BA' but its text was 'Por favor, aguarde
+Carregando seu endereço'.</status>
+</test>
+<status status="FAIL" starttime="20220804 21:08:37.134" endtime="20220804 21:11:22.116"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="2" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="2" skip="0" id="s1" name="Teste Do Ze">Teste Do Ze</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20220804 21:09:50.010" level="WARN">Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000001F0F9501990&gt;: Failed to establish a new connection: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente')': /session/c7651a9f3c2cf6796992905b08821ea0/window</msg>
+<msg timestamp="20220804 21:09:54.085" level="WARN">Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000001F0F9501C30&gt;: Failed to establish a new connection: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente')': /session/c7651a9f3c2cf6796992905b08821ea0/window</msg>
+<msg timestamp="20220804 21:09:58.148" level="WARN">Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000001F0F9501D80&gt;: Failed to establish a new connection: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente')': /session/c7651a9f3c2cf6796992905b08821ea0/window</msg>
+<msg timestamp="20220804 21:10:06.329" level="WARN">Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000001F0F94854B0&gt;: Failed to establish a new connection: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente')': /session/c7651a9f3c2cf6796992905b08821ea0/screenshot</msg>
+<msg timestamp="20220804 21:10:10.424" level="WARN">Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000001F0F9485390&gt;: Failed to establish a new connection: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente')': /session/c7651a9f3c2cf6796992905b08821ea0/screenshot</msg>
+<msg timestamp="20220804 21:10:14.536" level="WARN">Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000001F0F9485FC0&gt;: Failed to establish a new connection: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente')': /session/c7651a9f3c2cf6796992905b08821ea0/screenshot</msg>
+<msg timestamp="20220804 21:10:18.615" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: HTTPConnectionPool(host='localhost', port=65370): Max retries exceeded with url: /session/c7651a9f3c2cf6796992905b08821ea0/screenshot (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000001F0F94875E0&gt;: Failed to establish a new connection: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente'))</msg>
+<msg timestamp="20220804 21:10:22.732" level="WARN">Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000001F0F95020E0&gt;: Failed to establish a new connection: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente')': /session/c7651a9f3c2cf6796992905b08821ea0</msg>
+<msg timestamp="20220804 21:10:26.843" level="WARN">Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000001F0F95021D0&gt;: Failed to establish a new connection: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente')': /session/c7651a9f3c2cf6796992905b08821ea0</msg>
+<msg timestamp="20220804 21:10:30.926" level="WARN">Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000001F0F9502320&gt;: Failed to establish a new connection: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente')': /session/c7651a9f3c2cf6796992905b08821ea0</msg>
+</errors>
+</robot>

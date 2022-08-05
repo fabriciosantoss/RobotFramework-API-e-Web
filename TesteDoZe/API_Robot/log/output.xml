@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.10.5 on win32)" generated="20220804 23:22:05.049" rpa="false" schemaversion="3">
+<suite id="s1" name="testcasesAPI" source="C:\Users\fabriciosantos\Desktop\API_Robot\testcasesAPI.robot">
+<kw name="Conectar a minha API" library="ResourceAPI" type="SETUP">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>weatherAPI</arg>
+<arg>${URI}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20220804 23:22:05.271" level="INFO">Creating Session using : alias=weatherAPI, url=https://api.openweathermap.org, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220804 23:22:05.270" endtime="20220804 23:22:05.271"/>
+</kw>
+<status status="PASS" starttime="20220804 23:22:05.269" endtime="20220804 23:22:05.271"/>
+</kw>
+<test id="s1-t1" name="Realizar uma requisição válida" line="7">
+<kw name="Dado que eu faço uma requisição válida" library="ResourceAPI">
+<kw name="GET On Session" library="RequestsLibrary">
+<var>${Response}</var>
+<arg>weatherAPI</arg>
+<arg>url=/data/2.5/weather</arg>
+<arg>params=lat=${Lat}&amp;lon=${Lon}&amp;appid=${App_Id}</arg>
+<arg>expected_status=any</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<msg timestamp="20220804 23:22:06.344" level="INFO">GET Request : url=https://api.openweathermap.org/data/2.5/weather?lat=35&amp;lon=139&amp;appid=220693f84aa74081af281e57cf029989 
+ path_url=/data/2.5/weather?lat=35&amp;lon=139&amp;appid=220693f84aa74081af281e57cf029989 
+ headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20220804 23:22:06.344" level="INFO">GET Response : url=https://api.openweathermap.org/data/2.5/weather?lat=35&amp;lon=139&amp;appid=220693f84aa74081af281e57cf029989 
+ status=200, reason=OK 
+ headers={'Server': 'openresty', 'Date': 'Fri, 05 Aug 2022 02:22:09 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '485', 'Connection': 'keep-alive', 'X-Cache-Key': '/data/2.5/weather?lat=35&amp;lon=139', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Credentials': 'true', 'Access-Control-Allow-Methods': 'GET, POST'} 
+ body={"coord":{"lon":139,"lat":35},"weather":[{"id":804,"main":"Clouds","description":"overcast clouds","icon":"04d"}],"base":"stations","main":{"temp":294.44,"feels_like":295.13,"temp_min":294.44,"temp_max":294.44,"pressure":1007,"humidity":96},"visibility":10000,"wind":{"speed":0.45,"deg":113,"gust":1.34},"clouds":{"all":100},"dt":1659665593,"sys":{"type":2,"id":2019346,"country":"JP","sunrise":1659642957,"sunset":1659692647},"timezone":32400,"id":1851632,"name":"Shuzenji","cod":200} 
+ </msg>
+<msg timestamp="20220804 23:22:06.344" level="INFO">C:\Users\fabriciosantos\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1045: InsecureRequestWarning: Unverified HTTPS request is being made to host 'api.openweathermap.org'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(</msg>
+<msg timestamp="20220804 23:22:06.347" level="INFO">${Response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220804 23:22:05.272" endtime="20220804 23:22:06.347"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${Response.text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220804 23:22:06.350" level="INFO">{"coord":{"lon":139,"lat":35},"weather":[{"id":804,"main":"Clouds","description":"overcast clouds","icon":"04d"}],"base":"stations","main":{"temp":294.44,"feels_like":295.13,"temp_min":294.44,"temp_max":294.44,"pressure":1007,"humidity":96},"visibility":10000,"wind":{"speed":0.45,"deg":113,"gust":1.34},"clouds":{"all":100},"dt":1659665593,"sys":{"type":2,"id":2019346,"country":"JP","sunrise":1659642957,"sunset":1659692647},"timezone":32400,"id":1851632,"name":"Shuzenji","cod":200}</msg>
+<status status="PASS" starttime="20220804 23:22:06.348" endtime="20220804 23:22:06.350"/>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${Response}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20220804 23:22:06.352" level="INFO">${Response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220804 23:22:06.351" endtime="20220804 23:22:06.352"/>
+</kw>
+<status status="PASS" starttime="20220804 23:22:05.272" endtime="20220804 23:22:06.352"/>
+</kw>
+<kw name="Então deve ser retornado o status code" library="ResourceAPI">
+<arg>200</arg>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${Response.status_code}</arg>
+<arg>${StatusCode_Desejado}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<msg timestamp="20220804 23:22:06.356" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<status status="PASS" starttime="20220804 23:22:06.354" endtime="20220804 23:22:06.356"/>
+</kw>
+<status status="PASS" starttime="20220804 23:22:06.353" endtime="20220804 23:22:06.356"/>
+</kw>
+<status status="PASS" starttime="20220804 23:22:05.271" endtime="20220804 23:22:06.357"/>
+</test>
+<test id="s1-t2" name="Realizar requisição para validação de um campo obrigatório" line="10">
+<kw name="Dado que eu faço uma requisição inválida" library="ResourceAPI">
+<kw name="GET On Session" library="RequestsLibrary">
+<var>${Response}</var>
+<arg>weatherAPI</arg>
+<arg>url=/data/2.5/weather</arg>
+<arg>params=lat=&amp;lon=${Lon}&amp;appid=${App_Id}</arg>
+<arg>expected_status=any</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<msg timestamp="20220804 23:22:06.567" level="INFO">GET Request : url=https://api.openweathermap.org/data/2.5/weather?lat=&amp;lon=139&amp;appid=220693f84aa74081af281e57cf029989 
+ path_url=/data/2.5/weather?lat=&amp;lon=139&amp;appid=220693f84aa74081af281e57cf029989 
+ headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20220804 23:22:06.567" level="INFO">GET Response : url=https://api.openweathermap.org/data/2.5/weather?lat=&amp;lon=139&amp;appid=220693f84aa74081af281e57cf029989 
+ status=400, reason=Bad Request 
+ headers={'Server': 'openresty', 'Date': 'Fri, 05 Aug 2022 02:22:10 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '44', 'Connection': 'keep-alive', 'X-Cache-Key': '/data/2.5/weather?lat=&amp;lon=139', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Credentials': 'true', 'Access-Control-Allow-Methods': 'GET, POST'} 
+ body={"cod":"400","message":"Nothing to geocode"} 
+ </msg>
+<msg timestamp="20220804 23:22:06.567" level="INFO">C:\Users\fabriciosantos\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1045: InsecureRequestWarning: Unverified HTTPS request is being made to host 'api.openweathermap.org'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(</msg>
+<msg timestamp="20220804 23:22:06.570" level="INFO">${Response} = &lt;Response [400]&gt;</msg>
+<status status="PASS" starttime="20220804 23:22:06.362" endtime="20220804 23:22:06.571"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${Response.text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220804 23:22:06.575" level="INFO">{"cod":"400","message":"Nothing to geocode"}</msg>
+<status status="PASS" starttime="20220804 23:22:06.572" endtime="20220804 23:22:06.575"/>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${Response}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20220804 23:22:06.577" level="INFO">${Response} = &lt;Response [400]&gt;</msg>
+<status status="PASS" starttime="20220804 23:22:06.576" endtime="20220804 23:22:06.577"/>
+</kw>
+<status status="PASS" starttime="20220804 23:22:06.361" endtime="20220804 23:22:06.578"/>
+</kw>
+<kw name="Então deve ser retornado o status code" library="ResourceAPI">
+<arg>400</arg>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${Response.status_code}</arg>
+<arg>${StatusCode_Desejado}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<msg timestamp="20220804 23:22:06.582" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<status status="PASS" starttime="20220804 23:22:06.580" endtime="20220804 23:22:06.582"/>
+</kw>
+<status status="PASS" starttime="20220804 23:22:06.579" endtime="20220804 23:22:06.582"/>
+</kw>
+<status status="PASS" starttime="20220804 23:22:06.360" endtime="20220804 23:22:06.583"/>
+</test>
+<test id="s1-t3" name="Realizar requisição para validar a autenticação" line="13">
+<kw name="Dado que eu faço uma requisição com o appid inválido" library="ResourceAPI">
+<kw name="GET On Session" library="RequestsLibrary">
+<var>${Response}</var>
+<arg>weatherAPI</arg>
+<arg>url=/data/2.5/weather</arg>
+<arg>params=lat=&amp;lon=${Lon}&amp;appid=2</arg>
+<arg>expected_status=any</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<msg timestamp="20220804 23:22:06.799" level="INFO">GET Request : url=https://api.openweathermap.org/data/2.5/weather?lat=&amp;lon=139&amp;appid=2 
+ path_url=/data/2.5/weather?lat=&amp;lon=139&amp;appid=2 
+ headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20220804 23:22:06.799" level="INFO">GET Response : url=https://api.openweathermap.org/data/2.5/weather?lat=&amp;lon=139&amp;appid=2 
+ status=401, reason=Unauthorized 
+ headers={'Server': 'openresty', 'Date': 'Fri, 05 Aug 2022 02:22:10 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '107', 'Connection': 'keep-alive', 'X-Cache-Key': '/data/2.5/weather?lat=&amp;lon=139', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Credentials': 'true', 'Access-Control-Allow-Methods': 'GET, POST'} 
+ body={"cod":401, "message": "Invalid API key. Please see http://openweathermap.org/faq#error401 for more info."} 
+ </msg>
+<msg timestamp="20220804 23:22:06.799" level="INFO">C:\Users\fabriciosantos\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1045: InsecureRequestWarning: Unverified HTTPS request is being made to host 'api.openweathermap.org'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(</msg>
+<msg timestamp="20220804 23:22:06.802" level="INFO">${Response} = &lt;Response [401]&gt;</msg>
+<status status="PASS" starttime="20220804 23:22:06.588" endtime="20220804 23:22:06.802"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${Response.text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220804 23:22:06.805" level="INFO">{"cod":401, "message": "Invalid API key. Please see http://openweathermap.org/faq#error401 for more info."}</msg>
+<status status="PASS" starttime="20220804 23:22:06.803" endtime="20220804 23:22:06.805"/>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${Response}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20220804 23:22:06.806" level="INFO">${Response} = &lt;Response [401]&gt;</msg>
+<status status="PASS" starttime="20220804 23:22:06.805" endtime="20220804 23:22:06.806"/>
+</kw>
+<status status="PASS" starttime="20220804 23:22:06.587" endtime="20220804 23:22:06.806"/>
+</kw>
+<kw name="Então deve ser retornado o status code" library="ResourceAPI">
+<arg>401</arg>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${Response.status_code}</arg>
+<arg>${StatusCode_Desejado}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<msg timestamp="20220804 23:22:06.809" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<status status="PASS" starttime="20220804 23:22:06.808" endtime="20220804 23:22:06.809"/>
+</kw>
+<status status="PASS" starttime="20220804 23:22:06.807" endtime="20220804 23:22:06.809"/>
+</kw>
+<status status="PASS" starttime="20220804 23:22:06.586" endtime="20220804 23:22:06.810"/>
+</test>
+<status status="PASS" starttime="20220804 23:22:05.056" endtime="20220804 23:22:06.813"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="3" fail="0" skip="0" id="s1" name="testcasesAPI">testcasesAPI</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
